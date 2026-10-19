@@ -47,3 +47,4 @@ footer h4{color:var(--ink);margin:0 0 10px;font-family:"Playfair Display",serif}
 @media(max-width:860px){.hero .grid,.cols,footer .fc{grid-template-columns:1fr}.menu-btn{display:block}
 .nav ul{display:none;position:absolute;top:72px;left:0;right:0;background:var(--bg);flex-direction:column;gap:0;padding:10px 20px 20px;border-bottom:1px solid var(--line)}.nav ul.open{display:flex}.nav ul a{display:block;padding:12px 0}
 .nav .btn.call{display:none}section{padding:56px 0}}
+.page article img{border-radius:12px;display:block;margin:24px 0}.page article h2,.page article h3{margin-top:1.6em}.page article ul,.page article ol{color:#d8d3c8}
