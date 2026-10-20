@@ -234,3 +234,7 @@ html{-webkit-tap-highlight-color:rgba(255,61,154,.22)}
 @media(max-width:480px){.btns .btn{flex:1 1 100%;text-align:center}.cta .btns .btn{flex-basis:auto;min-width:min(100%,260px)}}
 .card .body .btn{margin-top:auto}.body p+.btn{margin-top:4px}
 .cta .wrap>.btn{margin:6px}
+
+/* footer credit */
+.fbot{margin-top:30px;padding-top:20px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between;font-size:.9rem}
+.fbot a{display:inline;padding:0;color:var(--gold2);text-decoration:none}.fbot a:hover{text-decoration:underline}
