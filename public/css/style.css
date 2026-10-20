@@ -227,3 +227,10 @@ html{-webkit-tap-highlight-color:rgba(255,61,154,.22)}
   footer a{padding:7px 0}
 }
 @media(prefers-reduced-motion:reduce){.mbar,.nav ul{transition:none}.swipe{scroll-behavior:auto}}
+
+/* button groups: consistent spacing when they wrap */
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}.btns.center{justify-content:center}
+.btn+.btn{margin-left:0}
+@media(max-width:480px){.btns .btn{flex:1 1 100%;text-align:center}.cta .btns .btn{flex-basis:auto;min-width:min(100%,260px)}}
+.card .body .btn{margin-top:auto}.body p+.btn{margin-top:4px}
+.cta .wrap>.btn{margin:6px}
