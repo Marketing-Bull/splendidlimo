@@ -28,13 +28,32 @@
     function show(){bar.classList.toggle('show',sc&&!qv)}
     window.addEventListener('scroll',function(){sc=window.scrollY>420;show()},{passive:true});
     if(qf&&'IntersectionObserver' in window){new IntersectionObserver(function(es){qv=es[0].isIntersecting;show()},{threshold:.35}).observe(qf)}}
+  /* first-party attribution: where visitors came from and what they viewed (stored only in this browser, sent with a quote request) */
+  var A={};try{A=JSON.parse(localStorage.getItem('sl_attr')||'{}')||{}}catch(e){A={}}
+  function mkTouch(){var q=new URLSearchParams(location.search),u={};
+    ['utm_source','utm_medium','utm_campaign','utm_term','utm_content','gclid','gbraid','wbraid','fbclid','msclkid','ttclid'].forEach(function(k){if(q.get(k))u[k.replace('utm_','')]=q.get(k)});
+    return{at:new Date().toISOString(),landing:location.pathname+location.search,referrer:document.referrer||'',utm:u}}
+  try{var t=mkTouch(),ext=t.referrer&&t.referrer.indexOf(location.host)<0;
+    if(!A.first)A.first=t;
+    if(!A.last||Object.keys(t.utm).length||ext)A.last=t;
+    A.pages=(A.pages||[]).concat(location.pathname).slice(-15);
+    if(!sessionStorage.getItem('sl_v')){A.visits=(A.visits||0)+1;sessionStorage.setItem('sl_v','1')}
+    localStorage.setItem('sl_attr',JSON.stringify(A))}catch(e){}
   var f=document.getElementById('quote-form');if(!f)return;
-  var m=f.querySelector('.msg');
+  var m=f.querySelector('.msg'),t0=Date.now();
   f.addEventListener('submit',function(e){
-    e.preventDefault();m.className='msg';m.textContent='Sending…';
-    fetch('/api/quote',{method:'POST',headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({phone:f.phone.value,company:f.company.value,page:location.pathname})})
-      .then(function(r){if(!r.ok)throw 0;m.className='msg ok';m.textContent='Thanks! We’ll text or call you shortly.';f.reset()})
-      .catch(function(){m.className='msg err';m.innerHTML='Something went wrong. Please call <a href="tel:+19546698444">(954) 669-8444</a>.'});
+    e.preventDefault();
+    var digits=f.phone.value.replace(/\D/g,'');
+    if(digits.length<10){m.className='msg err';m.textContent='Please enter a valid mobile number so we can reach you.';f.phone.focus();return}
+    m.className='msg';m.textContent='Sending…';
+    var btn=f.querySelector('button[type=submit]');if(btn)btn.disabled=true;
+    var c=navigator.connection||{};
+    var body={name:f.name.value,phone:f.phone.value,service:f.service.value,date:f.date.value,passengers:f.passengers.value,details:f.details.value,
+      company:f.company.value,page:location.pathname,elapsed:Date.now()-t0,attr:A,
+      ctx:{lang:navigator.language,tz:(Intl.DateTimeFormat().resolvedOptions()||{}).timeZone,screen:screen.width+'x'+screen.height,viewport:innerWidth+'x'+innerHeight,touch:'ontouchstart' in window,conn:c.effectiveType||''}};
+    fetch('/api/quote/',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)})
+      .then(function(r){if(!r.ok)throw 0;m.className='msg ok';m.textContent='Thanks! We’ll text or call you shortly.';f.reset();t0=Date.now()})
+      .catch(function(){m.className='msg err';m.innerHTML='Something went wrong. Please call <a href="tel:+19546698444">(954) 669-8444</a>.'})
+      .then(function(){if(btn)btn.disabled=false});
   });
 })();
