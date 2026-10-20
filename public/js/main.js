@@ -51,7 +51,7 @@
     var body={name:f.name.value,phone:f.phone.value,service:f.service.value,date:f.date.value,passengers:f.passengers.value,details:f.details.value,
       company:f.company.value,page:location.pathname,elapsed:Date.now()-t0,attr:A,
       ctx:{lang:navigator.language,tz:(Intl.DateTimeFormat().resolvedOptions()||{}).timeZone,screen:screen.width+'x'+screen.height,viewport:innerWidth+'x'+innerHeight,touch:'ontouchstart' in window,conn:c.effectiveType||''}};
-    fetch('/api/quote',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)})
+    fetch('/api/quote/',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)})
       .then(function(r){if(!r.ok)throw 0;m.className='msg ok';m.textContent='Thanks! We’ll text or call you shortly.';f.reset();t0=Date.now()})
       .catch(function(){m.className='msg err';m.innerHTML='Something went wrong. Please call <a href="tel:+19546698444">(954) 669-8444</a>.'})
       .then(function(){if(btn)btn.disabled=false});
