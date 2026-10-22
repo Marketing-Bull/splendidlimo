@@ -85,5 +85,6 @@ export default async function handler(req, res) {
     }),
   });
   if (!r.ok) { console.error('resend failed', r.status); return res.status(502).json({ error: 'send failed' }); }
-  return res.status(200).json({ ok: true });
+  // Distinguish delivered-to-provider leads from the silent bot responses above.
+  return res.status(200).json({ ok: true, leadAccepted: true });
 }
