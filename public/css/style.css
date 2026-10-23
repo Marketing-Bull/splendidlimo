@@ -21,9 +21,9 @@ header{position:sticky;top:0;z-index:50;background:rgba(11,11,12,.92);backdrop-f
 .hero .grid{display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:center}
 .hero p.lead{color:var(--mute);font-size:1.15rem;max-width:34em}
 .stars{color:var(--gold2);letter-spacing:3px}
-.quote{background:var(--bg2);border:1px solid var(--line);border-radius:16px;padding:28px}
+.quote{color-scheme:dark;background:var(--bg2);border:1px solid var(--line);border-radius:16px;padding:28px}
 .quote h2{font-size:1.5rem}.quote p{color:var(--mute);font-size:.95rem;margin-top:0}
-.quote label{display:block;font-size:.85rem;color:var(--mute);margin:14px 0 6px}
+.quote label{display:block;font-size:1rem;color:var(--ink);margin:18px 0 8px}
 .quote input[type=tel]{width:100%;padding:14px;border-radius:8px;border:1px solid var(--line);background:#0b0b0c;color:var(--ink);font-size:1rem}
 .quote .row{display:flex;gap:12px;align-items:center;margin-top:18px;flex-wrap:wrap}
 .hp{position:absolute;left:-9999px}.msg{margin-top:14px;font-size:.95rem}.msg.ok{color:#7bd88f}.msg.err{color:#ff8a80}
@@ -240,13 +240,14 @@ html{-webkit-tap-highlight-color:rgba(255,61,154,.22)}
 .fbot a{display:inline;padding:0;color:var(--gold2);text-decoration:none}.fbot a:hover{text-decoration:underline}
 
 /* expanded quote form */
-.quote input[type=text],.quote input[type=tel],.quote input[type=date],.quote input[type=number],.quote select,.quote textarea{width:100%;padding:13px 14px;border-radius:8px;border:1px solid var(--line);background:#0b0b0c;color:var(--ink);font:inherit;font-size:1rem}
-.quote textarea{resize:vertical;min-height:84px}.quote select{appearance:none;-webkit-appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--gold) 50%),linear-gradient(135deg,var(--gold) 50%,transparent 50%);background-position:calc(100% - 20px) 52%,calc(100% - 14px) 52%;background-size:6px 6px;background-repeat:no-repeat;padding-right:38px}
+.quote input[type=text],.quote input[type=tel],.quote input[type=date],.quote input[type=number],.quote select,.quote textarea{width:100%;min-width:0;min-height:64px;padding:18px 16px;border-radius:10px;border:1px solid #59534a;background:#0b0b0c;color:var(--ink);font:inherit;font-size:1.125rem;line-height:1.5}
+.quote textarea{resize:vertical;min-height:144px}.quote select{appearance:none;-webkit-appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--gold) 50%),linear-gradient(135deg,var(--gold) 50%,transparent 50%);background-position:calc(100% - 20px) 52%,calc(100% - 14px) 52%;background-size:6px 6px;background-repeat:no-repeat;padding-right:38px}
 .quote input:focus,.quote select:focus,.quote textarea:focus{outline:2px solid rgba(201,164,92,.6);outline-offset:1px;border-color:var(--gold)}
 .quote .more{margin-top:14px;border:1px dashed rgba(201,164,92,.4);border-radius:10px;padding:0 14px}.quote .more summary{cursor:pointer;padding:12px 0;color:var(--gold2);font-weight:600;list-style:none}.quote .more summary::-webkit-details-marker{display:none}.quote .more summary:before{content:"+ ";color:var(--vc-pink)}.quote .more[open] summary:before{content:"– "}
 .quote .more[open]{padding-bottom:14px}.quote .two{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:12px}
 .quote .fine{font-size:.78rem;color:var(--mute);margin:14px 0 0;line-height:1.45}.quote .fine a{color:var(--gold2)}
-@media(max-width:768px){.quote input[type=text],.quote input[type=tel],.quote input[type=date],.quote input[type=number],.quote select,.quote textarea{font-size:16px;padding:15px 14px}}
+@media(max-width:768px){.quote input[type=text],.quote input[type=tel],.quote input[type=date],.quote input[type=number],.quote select,.quote textarea{font-size:18px;padding:18px 16px}}
+@media(max-width:480px){.quote{padding:22px}.quote .two{grid-template-columns:minmax(0,1fr)}}
 
 /* Service destinations and accessible entry points. */
 [id]{scroll-margin-top:100px}

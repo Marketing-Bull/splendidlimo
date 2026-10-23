@@ -35,7 +35,7 @@
   if(bar){var qf=document.getElementById('quote-form'),qv=false,sc=false;
     function show(){bar.classList.toggle('show',sc&&!qv)}
     window.addEventListener('scroll',function(){sc=window.scrollY>420;show()},{passive:true});
-    if(qf&&'IntersectionObserver' in window){new IntersectionObserver(function(es){qv=es[0].isIntersecting;show()},{threshold:.35}).observe(qf)}}
+    if(qf&&'IntersectionObserver' in window){new IntersectionObserver(function(es){qv=es[0].isIntersecting;show()},{threshold:0}).observe(qf)}}
   /* first-party attribution: where visitors came from and what they viewed (stored only in this browser, sent with a quote request) */
   var A={};try{A=JSON.parse(localStorage.getItem('sl_attr')||'{}')||{}}catch(e){A={}}
   function mkTouch(){var q=new URLSearchParams(location.search),u={};
