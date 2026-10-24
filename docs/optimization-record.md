@@ -33,6 +33,10 @@ The Instagram association alone does not establish Eddie’s full legal name, fo
 
 The repository default branch at the time of this work was `claude/pensive-lovelace-fdbz2t`. The main SEO release was developed on `feat/seo-service-pages` before being fast-forward merged. GitHub publication does not by itself prove that the hosting platform deployed successfully.
 
+## Voice-note biography follow-up — October 24, 2026
+
+The user subsequently supplied a spoken Eduard biography and a separate airport-pricing recording. The biography has now been integrated into the homepage and a dedicated About page, with shared navigation, a sitemap entry and AboutPage/Person markup. See [source and editorial notes](eduard-bio-source-notes.md) for what was transcribed, how the copy was edited, and why the ambiguous pricing terms remain unpublished. The site now has 12 pages; the earlier 11-page measurements below remain the historical release results.
+
 ## 1. Repository and runtime investigation
 
 Before making changes, the setup work inspected the README, package manifest, serverless quote handler, host configuration, headers, assets, and Git state.
