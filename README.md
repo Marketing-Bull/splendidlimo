@@ -2,6 +2,12 @@
 
 Static site (no build step). Source lives in `public/`.
 
+## Optimization documentation
+
+- [Optimization record: decisions, implementation detail, validation, and Eddie’s brand context](docs/optimization-record.md)
+- [SEO/GEO roadmap: proposed pages, structured data, research sources, and outstanding facts](docs/seo-geo-roadmap.md)
+- [Release and deployment checklist](docs/seo-release.md)
+
 ## Deploy
 
 **Cloudflare Pages** — connect this repo; build command: *(none)*; output directory: `public`.
