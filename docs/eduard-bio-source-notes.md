@@ -34,3 +34,9 @@ The About-page request can be completed independently of those pricing questions
 ## Validation
 
 Local Chromium checks passed for 12 pages and 358 internal link/anchor occurrences. Homepage and About layouts were checked at 320, 390, 768, 900, 1024 and 1440 pixels, including header overlap and horizontal overflow. The homepage bio link successfully opened About. Canonical, AboutPage/Person schema, shared About links and browser runtime checks passed. Desktop and mobile screenshots were inspected. External requests were blocked during local checks, so production typography, deployment and analytics delivery are separate checks.
+
+## October 30, 2026 follow-up
+
+The bio was present on the development branch but absent from production: the live `/about/` URL returned HTTP 404, and GitHub `main` lacked the biography commit. The new pricing branch includes the existing biography and service updates and incorporates production's history so they can be reviewed together for release. No recorded audio was embedded: the voice notes are editorial source material.
+
+Added `/pricing/`, shared Pricing navigation/footer links, an airport-page link and a sitemap entry. The newly supplied `SplendidPricing.mp3` was transcribed locally. Miami airport–South Beach ($125), Fort Lauderdale airport–South Beach ($175), a 30-minute waiting allowance and additional hourly waiting are represented. Vehicle applicability, gratuity inclusion, tolls/parking, waiting-clock start, later-hour billing and cancellation notice terms are not established clearly enough for unconditional promises; the page directs customers to obtain those details in their quote. The 20% gratuity mentioned in the recording is described as something to confirm, rather than an automatically added fee. Raw recordings and automatic transcripts remain outside the repository.
