@@ -22,7 +22,7 @@ directory and `api/quote.js` is the function.
 
 - `RESEND_API_KEY`
 - `QUOTE_FROM` — a sender on a Resend-verified domain (default `Splendid Limo <quotes@splendidlimo.com>`)
-- `QUOTE_TO` — recipient (default `reservations@splendidlimo.com`)
+- `QUOTE_TO` — recipient (default `splendidlimoboca@gmail.com`)
 
 ## Local preview
 
